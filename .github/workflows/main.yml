@@ -5,6 +5,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - run: pwd
+    - run: pacman -S git
   jobs2:
     name: "jobs2"
     runs-on: windows-latest
