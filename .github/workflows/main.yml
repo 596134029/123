@@ -4,5 +4,7 @@ jobs:
     name: "jobs1"
     runs-on: windows-latest
     steps:
+    - run: pwd
     - run: cd C:\
     - run: ls
+    - run: pwd
