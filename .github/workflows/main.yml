@@ -1,10 +1,29 @@
-on: push
+name: CMake Build and Test on Windows with MinGW
+
+on: [push, pull_request]
+
 jobs:
-  jobs1:
-    name: "jobs1"
+  build:
     runs-on: windows-latest
+    env:
+      MINGW_PATH: C:\msys64\mingw64\bin
     steps:
-    - run: pwd
-    - run: ls C:\msys64
-    - run: ls
-    - run: pwd
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Set up MinGW
+      uses: msys2/setup-msys2@v2
+      with:
+        update: true
+        install: >
+          mingw-w64-x86_64-toolchain
+          mingw-w64-x86_64-cmake
+          mingw-w64-x86_64-make
+    - name: Add MinGW to PATH
+      run: echo "$MINGW_PATH" >> $GITHUB_PATH
+    - name: Configure CMake
+      run: cmake -G "MinGW Makefiles" -B build
+    - name: Build
+      run: cmake --build build
+    - name: Run tests
+      run: ctest --test-dir build
+
