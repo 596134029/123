@@ -4,7 +4,7 @@ jobs:
     name: "jobs1"
     runs-on: windows-latest
     steps:
-    - run: cd C:\msys64
+    - run: cd C:\
     - run: ls
   jobs2:
     name: "jobs2"
