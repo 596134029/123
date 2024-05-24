@@ -3,6 +3,10 @@ jobs:
   jobs1:
     name: "jobs1"
     runs-on: windows-latest
+    steps:
+    - run: pwd
   jobs2:
     name: "jobs2"
     runs-on: windows-latest
+    steps:
+    - run: ls
