@@ -5,6 +5,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - run: pwd
-    - run: cd C:\
+    - run: cd C:\msys64
+    - run: C:
     - run: ls
     - run: pwd
