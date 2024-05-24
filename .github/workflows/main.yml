@@ -6,8 +6,3 @@ jobs:
     steps:
     - run: cd C:\
     - run: ls
-  jobs2:
-    name: "jobs2"
-    runs-on: windows-latest
-    steps:
-    - run: ls
