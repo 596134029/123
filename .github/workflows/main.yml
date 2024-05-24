@@ -4,8 +4,8 @@ jobs:
     name: "jobs1"
     runs-on: windows-latest
     steps:
-    - run: pwd
-    - run: pacman -S git
+    - run: cd C:\msys64
+    - run: ls
   jobs2:
     name: "jobs2"
     runs-on: windows-latest
